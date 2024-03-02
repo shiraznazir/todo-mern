@@ -79,13 +79,13 @@ const Body = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative h-screen bg-gray-200">
       <div className="pt-4 z-0 flex flex-col items-center justify-center bg-cover bg-center bg-blur backdrop-blur-3">
         <h1 className="my-4 text-3xl font-bold">Task List</h1>
         <div className="w-8/12 flex gap-5 justify-center">
           <div className="">
             <div className="flex justify-between">
-              <div className="my-2 bg-red-100 w-24 p-2 rounded-full flex items-center gap-2">
+              <div className="my-2 bg-red-300 w-24 p-2 rounded-full flex items-center gap-2">
                 <div className="w-4 flex justify-center items-center h-4 p-2 bg-red-500 rounded-full"></div>
                 <h1>Todo</h1>
               </div>
@@ -110,7 +110,7 @@ const Body = () => {
           </div>
           <div className="">
             <div className="flex justify-between">
-              <div className="my-2 bg-blue-100 w-32 p-2 rounded-full flex items-center gap-2">
+              <div className="my-2 bg-blue-300 w-32 p-2 rounded-full flex items-center gap-2">
                 <div className="w-4 flex justify-center items-center h-4 p-2 bg-blue-500 rounded-full"></div>
                 <h1>In progress</h1>
               </div>
@@ -135,7 +135,7 @@ const Body = () => {
           </div>
           <div className="">
             <div className="flex justify-between">
-              <div className="my-2 bg-green-100 w-24 p-2 rounded-full flex items-center gap-2">
+              <div className="my-2 bg-green-300 w-24 p-2 rounded-full flex items-center gap-2">
                 <div className="w-4 flex justify-center items-center h-4 p-2 bg-green-500 rounded-full"></div>
                 <h1>Done</h1>
               </div>

@@ -114,7 +114,7 @@ const AddTask = ({ handleClose, editData }) => {
   };
 
   useEffect(() => {
-    if (editData._id) {
+    if (editData?._id) {
       titleRef.current.value = editData.task_name;
       descRef.current.value = editData.task_description;
       if (editData.status === "todo") {
@@ -129,10 +129,10 @@ const AddTask = ({ handleClose, editData }) => {
 
   console.log("editData ", editData, inprogressRef?.current?.checked);
   return (
-    <div className="w-6/12 h-full transition ease-in-out delay-150 z-50 pt-10 p-4 absolute right-0 top-0 bg-gray-200">
+    <div className="w-6/12 h-screen transition ease-in-out delay-150 z-50 pt-10 p-4 absolute right-0 top-0 bg-gray-100">
       <div className="flex justify-between">
         <h1 className="text-2xl font-medium">
-          {editData._id ? "Edit Task" : "New Task"}
+          {editData?._id ? "Edit Task" : "New Task"}
         </h1>
         <CloseIcon onClick={handleClose} />
       </div>
@@ -189,9 +189,9 @@ const AddTask = ({ handleClose, editData }) => {
       </div>
       <button
         className="bg-green-500 p-2 text-white rounded"
-        onClick={editData._id ? editTask : saveTask}
+        onClick={editData?._id ? editTask : saveTask}
       >
-        {loading ? "loading..." : editData._id ? "Edit Task" : "Add Task"}
+        {loading ? "loading..." : editData?._id ? "Edit Task" : "Add Task"}
       </button>
       <Toaster position="top-right" reverseOrder={false} />
     </div>

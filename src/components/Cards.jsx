@@ -8,17 +8,26 @@ const Cards = ({
   handleDragOver,
   handleDrop,
 }) => {
-  const { task_name, task_description } = data;
+  const { task_name, task_description, status } = data;
+
   return (
     <div
-      className="relative card w-64 h-64 p-2 my-4 border-2 border-black rounded-xl cursor-pointer"
+      className="relative card w-64 h-64 p-2 my-4 bg-white box-shadow rounded-xl cursor-pointer"
       draggable
       onDragStart={(e) => handleDragStart(e, data.id)}
       onDragOver={handleDragOver}
       onDrop={(e) => handleDrop(e, data.id)}
     >
       <p>{task_description}</p>
-      <div className="absolute left-0 bottom-[-2px] w-full h-10 bg-black rounded-b-xl">
+      <div
+        className={`absolute left-0 bottom-[-2px] w-full h-10 ${
+          status == "todo"
+            ? "bg-red-300"
+            : status === "inprogress"
+            ? "bg-blue-300"
+            : "bg-green-300"
+        } rounded-b-xl`}
+      >
         <p className="text-white p-2 font-medium text-wrap break-normal">
           {task_name}
         </p>
